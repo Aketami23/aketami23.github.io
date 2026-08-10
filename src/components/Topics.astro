@@ -1,0 +1,29 @@
+---
+import TopicCard from './TopicCard.astro';
+
+const topics = [
+  {
+    number: '01',
+    title: 'Web制作',
+    description: '見やすく、触って楽しいWebページをつくります。',
+  },
+  {
+    number: '02',
+    title: '試行錯誤',
+    description: '新しい技術やアイデアを、小さく試して育てています。',
+  },
+  {
+    number: '03',
+    title: '記録',
+    description: 'つくったものや学んだことを、ここに残していきます。',
+  },
+];
+---
+
+<section class="topics container" id="works" aria-labelledby="topics-title">
+  <p class="eyebrow">Selected topics</p>
+  <h2 id="topics-title">最近やっていること</h2>
+  <div class="topic-grid">
+    {topics.map((topic) => <TopicCard {...topic} />)}
+  </div>
+</section>
