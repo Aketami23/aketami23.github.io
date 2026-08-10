@@ -1,18 +1,39 @@
-<section class="hero container" id="about" aria-labelledby="hero-title">
-  <div class="hero-copy">
-    <p class="eyebrow">Hello, World.</p>
-    <h1 id="hero-title">Ideas into<br /><em>something real.</em></h1>
-    <p class="lead">
-      こんにちは。Aketami23です。気になったことを試しながら、Webやデジタルの小さな作品をつくっています。
-    </p>
-    <a class="button" href="#works">サイトを見る <span aria-hidden="true">↓</span></a>
+---
+import Icon from './Icon.astro';
+import BioVisual from './BioVisual.astro';
+---
+
+<section class="profile-hero container" aria-labelledby="profile-title">
+  <div class="profile-copy">
+    <p class="profile-field">Bioinformatics</p>
+    <h1 id="profile-title">
+      <span>AKIBA RYO</span>
+    </h1>
+    <div class="profile-affiliation">
+      <span>Fourth-year undergraduate</span>
+      <span>School of Life Science and Technology</span>
+      <a href="https://www.isct.ac.jp/en" target="_blank" rel="noreferrer">
+        <Icon name="university" />
+        <span>Science Tokyo</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+    <div class="profile-links">
+      <a href="https://github.com/Aketami23" target="_blank" rel="me noreferrer">
+        <span class="profile-link__label"><Icon name="github" /><strong>GitHub</strong></span>
+        <span class="profile-link__arrow" aria-hidden="true">↗</span>
+      </a>
+      <a href="https://orcid.org/0009-0005-9748-7832" target="_blank" rel="me noreferrer">
+        <span class="profile-link__label"><Icon name="orcid" /><strong>ORCID</strong></span>
+        <span class="profile-link__arrow" aria-hidden="true">↗</span>
+      </a>
+      <a href="https://www.linkedin.com/in/ryo-akiba-30a950417/" target="_blank" rel="me noreferrer">
+        <span class="profile-link__label"><Icon name="linkedin" /><strong>LinkedIn</strong></span>
+        <span class="profile-link__arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
   </div>
 
-  <div class="hero-art" aria-hidden="true">
-    <div class="hero-orb hero-orb--large"></div>
-    <div class="hero-orb hero-orb--small"></div>
-    <div class="hero-grid"></div>
-    <span class="hero-star hero-star--one">✦</span>
-    <span class="hero-star hero-star--two">✦</span>
-  </div>
+  <BioVisual />
 </section>
