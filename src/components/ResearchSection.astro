@@ -1,0 +1,44 @@
+---
+import { research } from '../data/profile';
+import LocalizedText from './LocalizedText.astro';
+---
+
+<section class="cv-section container" id="research" aria-labelledby="research-title">
+  <h2 id="research-title"><LocalizedText text={{ en: 'Research', ja: '研究' }} /></h2>
+  <div class="research-list">
+    {research.map((item) => (
+      <article class="research-item">
+        <div class="research-number">{item.number}</div>
+        <figure class="research-graphic">
+          <a href={item.links[0].href} target="_blank" rel="noreferrer">
+            <img src={item.image} alt={item.imageAlt} loading="lazy" decoding="async" />
+          </a>
+        </figure>
+        <div class="research-content">
+          {item.meta && <p class="research-meta">{item.meta}</p>}
+          <h3>{item.title}</h3>
+          {item.authors && <p class="publication-authors">{item.authors}</p>}
+          {item.venue && <p class="publication-venue">{item.venue}</p>}
+          <p data-lang="en">{item.summary.en}</p>
+          <p data-lang="ja">{item.summary.ja}</p>
+          <div class="research-links">
+            {item.links.map((link) => <a href={link.href} target="_blank" rel="noreferrer">{link.label} <span aria-hidden="true">↗</span></a>)}
+          </div>
+        </div>
+        {item.presentations && (
+          <div class="research-presentations">
+            <h4><LocalizedText text={{ en: 'Presentations', ja: '学会発表' }} /></h4>
+            <div class="small-list">
+              {item.presentations.map((presentation) => (
+                <div class="small-list-item">
+                  <time>{presentation.period}</time>
+                  <div><strong><a href={presentation.href} target="_blank" rel="noreferrer">{presentation.title} ↗</a></strong><span>{presentation.detail}</span></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </article>
+    ))}
+  </div>
+</section>

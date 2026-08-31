@@ -1,10 +1,30 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import BackgroundSection from '../components/BackgroundSection.astro';
+import ExperienceSection from '../components/ExperienceSection.astro';
+import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
+import LocalizedText from '../components/LocalizedText.astro';
+import ResearchSection from '../components/ResearchSection.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="AKIBA RYO" description="AKIBA RYO is a fourth-year undergraduate studying bioinformatics at Science Tokyo.">
+<Layout title="AKIBA RYO" description="Personal website and web CV of Ryo Akiba, an undergraduate researcher at Science Tokyo.">
+  <Header />
   <main id="main-content">
     <Hero />
+    <section class="cv-section container" id="about" aria-labelledby="about-title">
+      <h2 id="about-title"><LocalizedText text={{ en: 'Research Interests', ja: '研究分野' }} /></h2>
+      <ul class="keyword-list" aria-label="Research interests">
+        <li><LocalizedText text={{ en: 'Structure prediction', ja: '構造予測' }} /></li>
+        <li><LocalizedText text={{ en: 'Function prediction', ja: '機能予測' }} /></li>
+        <li><LocalizedText text={{ en: 'Protein', ja: 'タンパク質' }} /></li>
+        <li>RNA</li>
+        <li>AI for Science</li>
+      </ul>
+    </section>
+    <ResearchSection />
+    <ExperienceSection />
+    <BackgroundSection />
   </main>
+  <footer class="site-footer container"><span>© {new Date().getFullYear()} Ryo Akiba</span></footer>
 </Layout>

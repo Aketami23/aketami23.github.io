@@ -1,25 +1,12 @@
 ---
 import Icon from './Icon.astro';
-import BioVisual from './BioVisual.astro';
 ---
 
-<section class="profile-hero container" aria-labelledby="profile-title">
+<section class="profile-hero container" id="top" aria-label="Affiliation and external profiles">
   <div class="profile-copy">
-    <p class="profile-field">Bioinformatics</p>
-    <h1 id="profile-title">
-      <span>AKIBA RYO</span>
-    </h1>
-    <div class="profile-affiliation">
-      <span>Fourth-year undergraduate</span>
-      <span>School of Life Science and Technology</span>
-      <a href="https://www.isct.ac.jp/en" target="_blank" rel="noreferrer">
-        <Icon name="university" />
-        <span>Science Tokyo</span>
-        <span aria-hidden="true">↗</span>
-      </a>
-    </div>
+    <h1>Ryo Akiba</h1>
 
-    <div class="profile-links">
+    <div class="profile-links" aria-label="External profiles">
       <a href="https://github.com/Aketami23" target="_blank" rel="me noreferrer">
         <span class="profile-link__label"><Icon name="github" /><strong>GitHub</strong></span>
         <span class="profile-link__arrow" aria-hidden="true">↗</span>
@@ -34,6 +21,4 @@ import BioVisual from './BioVisual.astro';
       </a>
     </div>
   </div>
-
-  <BioVisual />
 </section>

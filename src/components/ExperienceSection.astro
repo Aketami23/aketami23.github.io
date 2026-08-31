@@ -1,0 +1,24 @@
+---
+import { workExperience } from '../data/profile';
+import LocalizedText from './LocalizedText.astro';
+---
+
+<section class="cv-section container" id="experience" aria-labelledby="experience-title">
+  <h2 id="experience-title"><LocalizedText text={{ en: 'Professional Experience', ja: '職歴' }} /></h2>
+  <div class="timeline-list">
+    {workExperience.map((item) => (
+      <article class="timeline-item">
+        <div>
+          <h3><a href={item.href} target="_blank" rel="noreferrer">{item.organization} ↗</a></h3>
+          {item.roles.map((role) => (
+            <div class="work-role">
+              <strong><LocalizedText text={role.role} /></strong>
+              <span class="work-type"><LocalizedText text={role.type} /></span>
+              <time><LocalizedText text={role.period} /></time>
+            </div>
+          ))}
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
