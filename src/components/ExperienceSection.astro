@@ -11,11 +11,24 @@ import LocalizedText from './LocalizedText.astro';
         <div>
           <h3><a href={item.href} target="_blank" rel="noreferrer">{item.organization} ↗</a></h3>
           {item.roles.map((role) => (
-            <div class="work-role">
-              <strong><LocalizedText text={role.role} /></strong>
-              <span class="work-type"><LocalizedText text={role.type} /></span>
-              <time><LocalizedText text={role.period} /></time>
-            </div>
+            <details class="work-role">
+              <summary class="work-role__summary">
+                <strong><LocalizedText text={role.role} /></strong>
+                <span class="work-type"><LocalizedText text={role.type} /></span>
+                <time><LocalizedText text={role.period} /></time>
+                <span class="work-role__toggle" aria-hidden="true"></span>
+              </summary>
+              <ol class="work-role__details">
+                {role.descriptions.map((description) => (
+                  <li>
+                    <span><LocalizedText text={description.text} /></span>
+                    {description.research && (
+                      <a class="work-role__research-link" href={`#research-${description.research}`} aria-label={`Go to research ${description.research}`}>{description.research}</a>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </details>
           ))}
         </div>
       </article>

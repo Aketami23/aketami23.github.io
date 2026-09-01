@@ -7,7 +7,7 @@ import LocalizedText from './LocalizedText.astro';
   <h2 id="research-title"><LocalizedText text={{ en: 'Research', ja: '研究' }} /></h2>
   <div class="research-list">
     {research.map((item) => (
-      <article class="research-item">
+      <article class="research-item" id={`research-${item.number}`}>
         <div class="research-number">{item.number}</div>
         <figure class="research-graphic">
           <a href={item.links[0].href} target="_blank" rel="noreferrer">

@@ -1,10 +1,11 @@
 ---
 import Icon from './Icon.astro';
+import LocalizedText from './LocalizedText.astro';
 ---
 
 <section class="profile-hero container" id="top" aria-label="Affiliation and external profiles">
   <div class="profile-copy">
-    <h1>Ryo Akiba</h1>
+    <h1><LocalizedText text={{ en: 'Ryo Akiba', ja: '秋葉凌羽' }} /></h1>
 
     <div class="profile-links" aria-label="External profiles">
       <a href="https://github.com/Aketami23" target="_blank" rel="me noreferrer">

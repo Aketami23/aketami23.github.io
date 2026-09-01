@@ -52,14 +52,60 @@ export const workExperience = [
   {
     organization: 'Computational Drug Discovery Laboratory',
     href: 'https://cddlab.io/',
-    roles: [{ period: { en: 'Aug 2026—Present', ja: '2026年8月—現在' }, role: { en: 'Research Assistant', ja: 'リサーチアシスタント' }, type: { en: 'Part-time', ja: 'パート・アルバイト' } }],
+    roles: [
+      {
+        period: { en: 'Aug 2026—Present', ja: '2026年8月—現在' },
+        role: { en: 'Research Assistant', ja: 'リサーチアシスタント' },
+        type: { en: 'Part-time', ja: 'パート・アルバイト' },
+        descriptions: [
+          {
+            text: {
+              en: 'Multi-objective optimization for designing structurally similar proteins with dissimilar sequences.',
+              ja: '構造的に類似しながら配列が異なるタンパク質の多目的最適化設計。',
+            },
+            research: '01',
+          },
+          {
+            text: {
+              en: 'Research on improving the chemical validity of ligand structures generated in protein–ligand complexes.',
+              ja: 'タンパク質–リガンド複合体の生成において、リガンド構造の化学的妥当性を高めるための研究。',
+            },
+          },
+        ],
+      },
+    ],
   },
   {
     organization: 'Preferred Networks, Inc.',
     href: 'https://www.preferred.jp/',
     roles: [
-      { period: { en: 'Sep 2025—Jul 2026', ja: '2025年9月—2026年7月' }, role: { en: 'Engineer', ja: 'エンジニア' }, type: { en: 'Part-time', ja: 'パート・アルバイト' } },
-      { period: { en: 'Jul 2025—Sep 2025', ja: '2025年7月—2025年9月' }, role: { en: 'Summer Intern', ja: '夏季インターン' }, type: { en: 'Internship', ja: 'インターンシップ' } },
+      {
+        period: { en: 'Sep 2025—Jul 2026', ja: '2025年9月—2026年7月' },
+        role: { en: 'Engineer', ja: 'エンジニア' },
+        type: { en: 'Part-time', ja: 'パート・アルバイト' },
+        descriptions: [
+          {
+            text: {
+              en: 'Research on the automated construction and analysis of a benchmark for AI-assisted troubleshooting of biological experiments (under review).',
+              ja: '生物学実験のAI支援トラブルシューティング用ベンチマークの自動構築・分析に関する研究（under review）。',
+            },
+          },
+        ],
+      },
+      {
+        period: { en: 'Jul 2025—Sep 2025', ja: '2025年7月—2025年9月' },
+        role: { en: 'Summer Intern', ja: '夏季インターン' },
+        type: { en: 'Internship', ja: 'インターンシップ' },
+        descriptions: [
+          {
+            text: {
+              en: 'Worked on AI-assisted troubleshooting of biological experiments.',
+              ja: '生物学実験のAI支援トラブルシューティングに取り組みました。',
+            },
+            research: '02',
+          },
+        ],
+      },
     ],
   },
 ];
