@@ -32,7 +32,16 @@ import LocalizedText from './LocalizedText.astro';
               {item.presentations.map((presentation) => (
                 <div class="small-list-item">
                   <time>{presentation.period}</time>
-                  <div><strong><a href={presentation.href} target="_blank" rel="noreferrer">{presentation.title} ↗</a></strong><span>{presentation.detail}</span></div>
+                  <div>
+                    <strong>
+                      {presentation.href ? (
+                        <a href={presentation.href} target="_blank" rel="noreferrer">{presentation.title} ↗</a>
+                      ) : (
+                        presentation.title
+                      )}
+                    </strong>
+                    <span>{presentation.detail}</span>
+                  </div>
                 </div>
               ))}
             </div>

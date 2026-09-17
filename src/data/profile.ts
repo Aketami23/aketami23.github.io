@@ -12,7 +12,7 @@ export type ResearchItem = {
   authors?: string;
   venue?: string;
   links: Link[];
-  presentations?: Array<{ period: string; title: string; detail: string; href: string }>;
+  presentations?: Array<{ period: string; title: string; detail: string; href?: string }>;
 };
 
 export const research: ResearchItem[] = [
@@ -29,9 +29,9 @@ export const research: ResearchItem[] = [
     venue: 'Science and Technology of Advanced Materials: Methods, 6(1), 2611575 (2026)',
     links: [{ label: 'Paper', href: 'https://doi.org/10.1080/27660400.2025.2611575' }],
     presentations: [
-      { period: '2026', title: 'AI4X-Accelerate 2026', detail: 'Oral presentation', href: 'https://ai4x.cc/2026/about/' },
-      { period: '2025', title: 'CBI学会2025年大会', detail: '口頭発表・口頭発表賞', href: 'https://cbi-society.org/taikai/taikai25/index.html' },
-      { period: '2025', title: '生体分子デザイン研究会', detail: '研究発表', href: 'https://biomol-des-ws.github.io/activities' },
+      { period: '2026', title: 'AI4X-Accelerate 2026 in Singapore', detail: 'Oral presentation', href: 'https://openreview.net/forum?id=wXu96N9h54' },
+      { period: '2025', title: 'CBI学会2025年大会 in 東京', detail: '口頭発表・口頭発表賞', href: 'https://cbi-society.org/taikai/taikai25/index.html' },
+      { period: '2025', title: '生体分子設計研究会 in 東京科学大学 湯島キャンパス', detail: '研究発表', href: 'https://biomol-des-ws.github.io/activities' },
     ],
   },
   {
