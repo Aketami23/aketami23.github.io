@@ -54,7 +54,7 @@ export const workExperience = [
     href: 'https://cddlab.io/',
     roles: [
       {
-        period: { en: 'Aug 2026—Present', ja: '2026年8月—現在' },
+        period: { en: 'Aug 2026 – Present', ja: '2026年8月〜現在' },
         role: { en: 'Research Assistant', ja: 'リサーチアシスタント' },
         type: { en: 'Part-time', ja: 'パート・アルバイト' },
         descriptions: [
@@ -80,7 +80,7 @@ export const workExperience = [
     href: 'https://www.preferred.jp/',
     roles: [
       {
-        period: { en: 'Sep 2025—Jul 2026', ja: '2025年9月—2026年7月' },
+        period: { en: 'Sep 2025 – Jul 2026', ja: '2025年9月〜2026年7月' },
         role: { en: 'Engineer', ja: 'エンジニア' },
         type: { en: 'Part-time', ja: 'パート・アルバイト' },
         descriptions: [
@@ -93,7 +93,7 @@ export const workExperience = [
         ],
       },
       {
-        period: { en: 'Jul 2025—Sep 2025', ja: '2025年7月—2025年9月' },
+        period: { en: 'Jul 2025 – Sep 2025', ja: '2025年7月〜2025年9月' },
         role: { en: 'Summer Intern', ja: '夏季インターン' },
         type: { en: 'Internship', ja: 'インターンシップ' },
         descriptions: [
