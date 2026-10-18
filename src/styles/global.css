@@ -152,7 +152,7 @@ html[data-language="ja"] [data-lang="ja"] {
 
 .profile-hero {
   min-height: 0;
-  padding-block: 42px 55px;
+  padding-block: 36px 40px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -161,7 +161,7 @@ html[data-language="ja"] [data-lang="ja"] {
 }
 
 .profile-copy h1 {
-  margin: 0 0 27px;
+  margin: 0;
   font-family: var(--font-serif);
   font-size: clamp(2.7rem, 5vw, 4.2rem);
   font-weight: 650;
@@ -219,7 +219,7 @@ html[data-language="ja"] [data-lang="ja"] {
   display: flex;
   flex-wrap: wrap;
   gap: 10px 24px;
-  margin-top: 32px;
+  margin-top: 24px;
 }
 
 .profile-links > a {
@@ -269,12 +269,12 @@ html[data-language="ja"] [data-lang="ja"] {
 }
 
 .cv-section {
-  padding-block: 70px;
+  padding-block: 46px;
   border-bottom: 1px solid var(--line);
 }
 
 .cv-section > h2 {
-  margin: 13px 0 0;
+  margin: 0;
   font-family: var(--font-serif);
   font-size: clamp(1.65rem, 3vw, 2.2rem);
   font-weight: 600;
@@ -287,14 +287,14 @@ html[data-language="ja"] [data-lang="ja"] {
 .timeline-list,
 .background-grid {
   max-width: 760px;
-  margin-top: 32px;
+  margin-top: 24px;
 }
 
 .keyword-list {
   display: flex;
   flex-wrap: wrap;
   max-width: 760px;
-  margin: 32px 0 0;
+  margin: 24px 0 0;
   padding: 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -302,7 +302,7 @@ html[data-language="ja"] [data-lang="ja"] {
 }
 
 .keyword-list li {
-  padding: 16px 24px 16px 0;
+  padding: 12px 24px 12px 0;
   color: var(--muted);
   font-size: 0.95rem;
 }
@@ -323,7 +323,7 @@ html[data-language="ja"] [data-lang="ja"] {
   grid-template-columns: 38px minmax(160px, 210px) minmax(0, 1fr);
   gap: 18px;
   align-items: start;
-  padding: 26px 0 31px;
+  padding: 22px 0 24px;
   border-bottom: 1px solid var(--line);
   scroll-margin-top: 24px;
 }
@@ -418,7 +418,7 @@ html[data-language="ja"] [data-lang="ja"] {
   display: grid;
   grid-template-columns: 58px minmax(0, 1fr);
   gap: 14px;
-  padding: 22px 0;
+  padding: 20px 0;
   border-top: 1px solid var(--line);
 }
 
@@ -443,8 +443,8 @@ html[data-language="ja"] [data-lang="ja"] {
 }
 
 .presentation-entry + .presentation-entry {
-  margin-top: 22px;
-  padding-top: 22px;
+  margin-top: 18px;
+  padding-top: 18px;
   border-top: 1px solid rgba(23, 26, 25, 0.1);
 }
 
@@ -589,7 +589,7 @@ html[data-language="ja"] .education-item [data-lang="ja"] {
 .timeline-item {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  padding: 22px 0;
+  padding: 18px 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -713,7 +713,7 @@ html[data-language="ja"] .education-item [data-lang="ja"] {
 }
 
 .background-group + .background-group {
-  margin-top: 38px;
+  margin-top: 28px;
 }
 
 .background-group h3 {
@@ -765,11 +765,11 @@ html[data-language="ja"] .education-item [data-lang="ja"] {
 
   .profile-hero {
     min-height: auto;
-    padding-block: 68px 76px;
+    padding-block: 40px 44px;
   }
 
   .cv-section {
-    padding-block: 61px;
+    padding-block: 36px;
   }
 }
 
