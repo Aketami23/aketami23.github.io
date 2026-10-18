@@ -156,8 +156,8 @@ export const workExperience = [
         descriptions: [
           {
             text: {
-              en: 'Research on the automated construction and analysis of a benchmark for AI-assisted troubleshooting of biological experiments (under review).',
-              ja: '生物学実験のAI支援トラブルシューティング用ベンチマークの自動構築・分析に関する研究（under review）。',
+              en: 'Manuscript in preparation.',
+              ja: '論文執筆中。',
             },
           },
         ],
