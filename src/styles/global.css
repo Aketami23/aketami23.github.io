@@ -5,6 +5,8 @@
   --paper: #ecece8;
   --line: rgba(23, 26, 25, 0.17);
   --accent: #526b72;
+  --link: #3e5e68;
+  --link-underline: rgba(62, 94, 104, 0.5);
   --font-sans: Inter, "Hiragino Kaku Gothic ProN", "Yu Gothic", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-serif: "Newsreader", "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "Times New Roman", serif;
 }
@@ -34,7 +36,19 @@ body {
 }
 
 a {
-  color: inherit;
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-color: var(--link-underline);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-skip-ink: auto;
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--ink);
+  text-decoration-color: currentColor;
 }
 
 a:focus-visible,
@@ -125,6 +139,11 @@ html[data-language="ja"] [data-lang="ja"] {
   color: var(--ink);
 }
 
+.site-header nav a:hover,
+.site-header nav a:focus-visible {
+  text-decoration: underline;
+}
+
 .language-switch {
   padding-left: 21px;
   border-left: 1px solid var(--line);
@@ -183,11 +202,10 @@ html[data-language="ja"] [data-lang="ja"] {
 }
 
 .research-links a {
-  color: var(--accent);
+  color: var(--link);
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.04em;
-  text-decoration: none;
 }
 
 .research-links a:hover,
@@ -208,7 +226,7 @@ html[data-language="ja"] [data-lang="ja"] {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  color: var(--muted);
+  color: var(--link);
   font-size: 0.75rem;
   text-decoration: none;
 }
@@ -226,6 +244,16 @@ html[data-language="ja"] [data-lang="ja"] {
 
 .profile-links strong {
   font-size: 0.75rem;
+  text-decoration: underline;
+  text-decoration-color: var(--link-underline);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+  transition: text-decoration-color 0.15s;
+}
+
+.profile-links > a:hover strong,
+.profile-links > a:focus-visible strong {
+  text-decoration-color: currentColor;
 }
 
 .icon {
@@ -430,7 +458,6 @@ html[data-language="ja"] [data-lang="ja"] {
 
 .presentation-entry a {
   overflow-wrap: anywhere;
-  text-decoration: none;
 }
 
 .presentation-entry a:hover,
@@ -649,11 +676,10 @@ html[data-language="ja"] .education-item [data-lang="ja"] {
 }
 
 .work-role__research-link {
-  color: var(--accent);
+  color: var(--link);
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.06em;
-  text-decoration: none;
 }
 
 .work-role__research-link::before {
