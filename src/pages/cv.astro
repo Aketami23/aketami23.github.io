@@ -1,0 +1,167 @@
+---
+import { research, workExperience, presentations, activities } from '../data/profile';
+
+const talks = [...presentations].sort((a, b) => b.date.localeCompare(a.date));
+const years = [...new Set(talks.map((talk) => talk.date.slice(0, 4)))];
+const updated = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'Asia/Tokyo' });
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="noindex" />
+    <title>Ryo Akiba — Curriculum Vitae</title>
+  </head>
+  <body>
+    <main>
+      <article class="sheet">
+        <header class="cv-header">
+          <p class="eyebrow">Curriculum Vitae</p>
+          <h1>Ryo Akiba</h1>
+          <p>Undergraduate researcher · Institute of Science Tokyo</p>
+          <nav aria-label="Profiles">
+            <a href="https://aketami23.github.io/">aketami23.github.io</a>
+            <a href="https://github.com/Aketami23">GitHub: Aketami23</a>
+            <a href="https://orcid.org/0009-0005-9748-7832">ORCID: 0009-0005-9748-7832</a>
+          </nav>
+        </header>
+
+        <section>
+          <h2>Education</h2>
+          <div class="dated">
+            <span class="date">Present</span>
+            <div>
+              <h3>Institute of Science Tokyo</h3>
+              <p>Fourth-year undergraduate, School of Life Science and Technology</p>
+              <p>Undergraduate thesis research on RNA tertiary structure prediction at <a href="https://www.sato-lab.org/">Sato Laboratory</a>.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Research Interests</h2>
+          <p>Structure prediction · Function prediction · Protein · RNA · AI for Science</p>
+        </section>
+
+        <section>
+          <h2>Research & Professional Experience</h2>
+          {workExperience.map((organization) => (
+            <div class="organization">
+              <h3><a href={organization.href}>{organization.organization}</a></h3>
+              {organization.roles.map((role) => (
+                <div class="role">
+                  <div class="role-heading"><strong>{role.role.en}</strong><span>{role.period.en}</span></div>
+                  <ul>{role.descriptions.map((description) => <li>{description.text.en}</li>)}</ul>
+                </div>
+              ))}
+            </div>
+          ))}
+        </section>
+
+        <section>
+          <h2>Publication</h2>
+          {research.filter((item) => item.venue).map((item) => (
+            <div class="entry">
+              <h3><a href={item.links[0].href}>{item.title}</a></h3>
+              <p>{item.authors}.</p>
+              <p class="muted"><em>{item.venue}</em>.</p>
+              <p><a href={item.links[0].href}>doi:10.1080/27660400.2025.2611575</a></p>
+            </div>
+          ))}
+        </section>
+
+        <section>
+          <h2>Selected Research Project</h2>
+          {research.filter((item) => !item.venue).map((item) => (
+            <div class="entry">
+              <h3><a href={item.links[0].href}>{item.title}</a></h3>
+              <p>{item.summary.en}</p>
+              <p class="muted">Technical blog, Preferred Networks</p>
+            </div>
+          ))}
+        </section>
+        <footer><span>Ryo Akiba · Curriculum Vitae</span><span>Updated {updated} · 1 / 2</span></footer>
+      </article>
+
+      <article class="sheet">
+        <header class="continued"><strong>Ryo Akiba</strong><span>Curriculum Vitae</span></header>
+        <section>
+          <h2>Presentations</h2>
+          {years.map((year) => (
+            <div class="dated talk-year">
+              <h3 class="date">{year}</h3>
+              <ol>
+                {talks.filter((talk) => talk.date.startsWith(year)).map((talk) => (
+                  <li class="talk">
+                    <p class="talk-format">{talk.format === 'oral' ? 'Oral presentation' : 'Poster presentation'}{talk.upcoming && ' · Upcoming'}{talk.award && ` · ${talk.award.en}`}</p>
+                    <h3><a href={talk.href}>{typeof talk.title === 'string' ? talk.title : talk.title.en}</a></h3>
+                    <p class="muted">{talk.event.en} · {talk.location.en}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          ))}
+        </section>
+
+        <section>
+          <h2>Activities</h2>
+          {activities.map((activity) => (
+            <div class="dated activity">
+              <span class="date">{activity.period}</span>
+              <div><h3><a href={activity.href}>{activity.title}</a> · {activity.detail.en}</h3><p>{activity.description.en}</p></div>
+            </div>
+          ))}
+        </section>
+
+        <section>
+          <h2>Honors & Awards</h2>
+          <div class="dated"><span class="date">2025</span><p>Oral Presentation Award, CBI Annual Meeting 2025</p></div>
+          <div class="dated"><span class="date">2025</span><p>Judges’ Award, Lean Launchpad National Competition 2025 Kyoto <span class="muted">(iGEM TokyoTech 2024 team)</span></p></div>
+          <div class="dated"><span class="date">2024</span><p>iGEM Gold Medal <span class="muted">(TokyoTech team)</span></p></div>
+          <div class="dated"><span class="date">2023</span><p>iGEM Silver Medal <span class="muted">(TokyoTech team)</span></p></div>
+        </section>
+        <footer><span>Ryo Akiba · Curriculum Vitae</span><span>Updated {updated} · 2 / 2</span></footer>
+      </article>
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #eee; color: #202522; font-family: Arial, Helvetica, sans-serif; font-size: 9pt; line-height: 1.45; }
+  .sheet { position: relative; width: 210mm; min-height: 297mm; margin: 0 auto; padding: 15mm 18mm 18mm; background: white; break-after: page; }
+  .sheet:last-child { break-after: auto; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  p, h1, h2, h3 { margin: 0; }
+  h1 { margin: 2mm 0 1mm; font-family: Georgia, serif; font-size: 30pt; line-height: 1.1; font-weight: normal; }
+  h2 { margin-bottom: 3mm; padding-bottom: 1.5mm; border-bottom: 0.3mm solid #bcc6c6; color: #455e65; font-size: 10pt; letter-spacing: 0.04em; }
+  h3 { font-size: 9pt; font-weight: 700; line-height: 1.4; }
+  section { margin-top: 5mm; }
+  .eyebrow { color: #526b72; font-size: 8pt; letter-spacing: 0.15em; text-transform: uppercase; }
+  .cv-header { padding-bottom: 4mm; border-bottom: 0.5mm solid #455e65; }
+  nav { display: flex; flex-wrap: wrap; gap: 1mm 5mm; margin-top: 2.5mm; font-size: 8pt; color: #526b72; }
+  .dated { display: grid; grid-template-columns: 15mm minmax(0, 1fr); gap: 3mm; margin-top: 1.5mm; }
+  .date { color: #526b72; font-size: 8pt; font-weight: 700; }
+  .organization + .organization { margin-top: 3mm; }
+  .role { margin-top: 1.5mm; }
+  .role-heading { display: flex; justify-content: space-between; gap: 5mm; font-size: 8.5pt; }
+  .role-heading > span, .muted { color: #626b69; }
+  ul { margin: 1mm 0 0; padding-left: 4mm; }
+  li + li { margin-top: 0.5mm; }
+  .entry p { margin-top: 1mm; }
+  .continued { display: flex; justify-content: space-between; padding-bottom: 3mm; border-bottom: 0.5mm solid #455e65; }
+  .continued strong { font-family: Georgia, serif; font-size: 14pt; }
+  .continued > span { color: #626b69; font-size: 8pt; }
+  .talk-year + .talk-year { margin-top: 4mm; }
+  .talk-year ol { padding: 0; margin: 0; list-style: none; }
+  .talk + .talk { margin-top: 3.5mm; }
+  .talk-format { margin-bottom: 0.7mm; color: #526b72; font-size: 7.5pt; font-weight: 700; }
+  .talk > .muted { margin-top: 0.7mm; font-size: 8pt; }
+  .activity + .activity { margin-top: 2.5mm; }
+  footer { position: absolute; bottom: 9mm; left: 18mm; right: 18mm; display: flex; justify-content: space-between; border-top: 0.2mm solid #d7dcdc; padding-top: 2mm; color: #626b69; font-size: 7pt; }
+  @media print { body { background: white; } .sheet { margin: 0; } }
+</style>

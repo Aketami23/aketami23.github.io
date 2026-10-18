@@ -13,14 +13,14 @@ import LocalizedText from './LocalizedText.astro';
           <div class="small-list-item">
             <time>{item.period}</time>
             <div>
-              <strong><a href={item.href} target="_blank" rel="noreferrer">{item.title} ↗</a></strong>
+              <strong><a href={item.href} target="_blank" rel="noreferrer">{item.title}</a></strong>
               <LocalizedText text={item.detail} />
               <LocalizedText text={item.description} />
               <ul class="activity-achievements" aria-label="Achievements">
                 {item.achievements.map((achievement) => (
                   <li>
                     {achievement.href ? (
-                      <a href={achievement.href} target="_blank" rel="noreferrer"><span data-lang="en">{achievement.label.en} ↗</span><span data-lang="ja">{achievement.label.ja} ↗</span></a>
+                      <a href={achievement.href} target="_blank" rel="noreferrer"><span data-lang="en">{achievement.label.en}</span><span data-lang="ja">{achievement.label.ja}</span></a>
                     ) : <LocalizedText text={achievement.label} />}
                   </li>
                 ))}
@@ -37,8 +37,8 @@ import LocalizedText from './LocalizedText.astro';
         <div>
           <strong><LocalizedText text={{ en: 'Institute of Science Tokyo', ja: '東京科学大学' }} /></strong>
           <LocalizedText text={{ en: 'Fourth-year undergraduate, School of Life Science and Technology', ja: '生命理工学院 学士課程4年' }} />
-          <span data-lang="en">Researching RNA tertiary structure prediction for my undergraduate thesis at <a href="https://www.sato-lab.org/" target="_blank" rel="noreferrer">Sato Laboratory ↗</a></span>
-          <span data-lang="ja"><a href="https://www.sato-lab.org/" target="_blank" rel="noreferrer">佐藤研究室 ↗</a>でRNA三次構造予測に関する卒業研究に取り組んでいます。</span>
+          <span data-lang="en">Researching RNA tertiary structure prediction for my undergraduate thesis at <a href="https://www.sato-lab.org/" target="_blank" rel="noreferrer">Sato Laboratory</a></span>
+          <span data-lang="ja"><a href="https://www.sato-lab.org/" target="_blank" rel="noreferrer">佐藤研究室</a>でRNA三次構造予測に関する卒業研究に取り組んでいます。</span>
         </div>
       </div>
     </div>

@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "cv": "astro build && node scripts/generate-cv.mjs",
     "preview": "astro preview"
   },
   "dependencies": {

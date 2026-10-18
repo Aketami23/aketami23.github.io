@@ -197,17 +197,6 @@ html[data-language="ja"] [data-lang="ja"] {
   text-underline-offset: 4px;
 }
 
-.research-links a span {
-  display: inline-block;
-  margin-left: 3px;
-  transition: transform 0.2s;
-}
-
-.research-links a:hover span,
-.research-links a:focus-visible span {
-  transform: translate(2px, -2px);
-}
-
 .profile-links {
   display: flex;
   flex-wrap: wrap;
@@ -249,10 +238,6 @@ html[data-language="ja"] [data-lang="ja"] {
 .profile-affiliation .icon {
   width: 16px;
   height: 16px;
-}
-
-.profile-link__arrow {
-  color: var(--accent);
 }
 
 .cv-section {

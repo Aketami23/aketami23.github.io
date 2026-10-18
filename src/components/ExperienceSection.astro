@@ -9,7 +9,7 @@ import LocalizedText from './LocalizedText.astro';
     {workExperience.map((item) => (
       <article class="timeline-item">
         <div>
-          <h3><a href={item.href} target="_blank" rel="noreferrer">{item.organization} ↗</a></h3>
+          <h3><a href={item.href} target="_blank" rel="noreferrer">{item.organization}</a></h3>
           {item.roles.map((role) => (
             <details class="work-role">
               <summary class="work-role__summary">

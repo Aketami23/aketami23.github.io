@@ -22,7 +22,7 @@ import LocalizedText from './LocalizedText.astro';
           <p data-lang="en">{item.summary.en}</p>
           <p data-lang="ja">{item.summary.ja}</p>
           <div class="research-links">
-            {item.links.map((link) => <a href={link.href} target="_blank" rel="noreferrer">{link.label} <span aria-hidden="true">↗</span></a>)}
+            {item.links.map((link) => <a href={link.href} target="_blank" rel="noreferrer">{link.label}</a>)}
           </div>
         </div>
       </article>
