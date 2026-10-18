@@ -156,8 +156,8 @@ export const workExperience = [
         descriptions: [
           {
             text: {
-              en: 'Manuscript in preparation.',
-              ja: '論文執筆中。',
+              en: 'Manuscript submitted for publication.',
+              ja: '論文投稿中。',
             },
           },
         ],
