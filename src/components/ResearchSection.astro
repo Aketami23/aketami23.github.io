@@ -25,28 +25,6 @@ import LocalizedText from './LocalizedText.astro';
             {item.links.map((link) => <a href={link.href} target="_blank" rel="noreferrer">{link.label} <span aria-hidden="true">↗</span></a>)}
           </div>
         </div>
-        {item.presentations && (
-          <div class="research-presentations">
-            <h4><LocalizedText text={{ en: 'Presentations', ja: '学会発表' }} /></h4>
-            <div class="small-list">
-              {item.presentations.map((presentation) => (
-                <div class="small-list-item">
-                  <time>{presentation.period}</time>
-                  <div>
-                    <strong>
-                      {presentation.href ? (
-                        <a href={presentation.href} target="_blank" rel="noreferrer">{presentation.title} ↗</a>
-                      ) : (
-                        presentation.title
-                      )}
-                    </strong>
-                    <span>{presentation.detail}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
       </article>
     ))}
   </div>

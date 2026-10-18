@@ -1,0 +1,42 @@
+---
+import { presentations } from '../data/profile';
+import LocalizedText from './LocalizedText.astro';
+
+const sortedPresentations = [...presentations].sort((a, b) => b.date.localeCompare(a.date));
+const years = [...new Set(sortedPresentations.map((item) => item.date.slice(0, 4)))];
+const formats = {
+  oral: { en: 'Oral', ja: '口頭発表' },
+  poster: { en: 'Poster', ja: 'ポスター発表' },
+};
+---
+
+<section class="cv-section container" id="presentations" aria-labelledby="presentations-title">
+  <h2 id="presentations-title"><LocalizedText text={{ en: 'Presentations', ja: '発表' }} /></h2>
+  <div class="presentation-list">
+    {years.map((year) => (
+      <section class="presentation-year" aria-labelledby={`presentations-${year}`}>
+        <h3 id={`presentations-${year}`}><time datetime={year}>{year}</time></h3>
+        <ul class="presentation-entries">
+          {sortedPresentations.filter((item) => item.date.startsWith(year)).map((item) => (
+            <li class="presentation-entry">
+              <div class="presentation-labels">
+                <span class={`presentation-format presentation-format--${item.format}`}><LocalizedText text={formats[item.format]} /></span>
+                {item.upcoming && <span class="presentation-status"><LocalizedText text={{ en: 'Upcoming', ja: '発表予定' }} /></span>}
+                {item.award && <span class="presentation-award"><LocalizedText text={item.award} /></span>}
+              </div>
+              <h4>
+                <a href={item.href} target="_blank" rel="noreferrer">
+                  {typeof item.title === 'string' ? item.title : <LocalizedText text={item.title} />} <span aria-hidden="true">↗</span>
+                </a>
+              </h4>
+              <p class="presentation-venue">
+                <LocalizedText text={item.event} /><span aria-hidden="true"> · </span>
+                <LocalizedText text={item.location} />
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+</section>

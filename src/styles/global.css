@@ -97,6 +97,8 @@ html[data-language="ja"] [data-lang="ja"] {
 
 .site-header nav {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   align-items: center;
   gap: 23px;
 }
@@ -268,6 +270,7 @@ html[data-language="ja"] [data-lang="ja"] {
 }
 
 .research-list,
+.presentation-list,
 .timeline-list,
 .background-grid {
   max-width: 760px;
@@ -398,21 +401,103 @@ html[data-language="ja"] [data-lang="ja"] {
   text-transform: uppercase;
 }
 
-.research-presentations {
-  grid-column: 2 / -1;
-  width: 100%;
-  margin-top: 8px;
-  padding-top: 18px;
+.presentation-year {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 14px;
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+}
+
+.presentation-year:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.presentation-year h3 {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+}
+
+.presentation-entries {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.presentation-entry + .presentation-entry {
+  margin-top: 22px;
+  padding-top: 22px;
   border-top: 1px solid rgba(23, 26, 25, 0.1);
 }
 
-.research-presentations h4 {
-  margin: 0;
-  color: var(--ink);
+.presentation-entry h4 {
+  margin: 9px 0 0;
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.presentation-entry a {
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.presentation-entry a:hover,
+.presentation-entry a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.presentation-venue {
+  margin: 7px 0 0;
+  color: var(--muted);
   font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.presentation-labels {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+}
+
+.presentation-format,
+.presentation-status,
+.presentation-award {
+  display: inline-block;
+  padding: 2px 7px;
+  border: 1px solid rgba(82, 107, 114, 0.25);
+  border-radius: 3px;
+  color: var(--accent);
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+
+.presentation-format--oral {
+  background: rgba(82, 107, 114, 0.1);
+}
+
+.presentation-format--poster {
+  border-style: dashed;
+}
+
+.presentation-status {
+  border-color: var(--line);
+  color: var(--muted);
+}
+
+.presentation-award {
+  border-color: rgba(130, 100, 44, 0.3);
+  color: #795d2c;
 }
 
 .small-list {
@@ -725,6 +810,7 @@ html[data-language="ja"] .education-item [data-lang="ja"] {
   }
 
   .small-list-item,
+  .presentation-year,
   .education-item {
     grid-template-columns: 48px minmax(0, 1fr);
     gap: 11px;

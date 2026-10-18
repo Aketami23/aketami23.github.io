@@ -12,7 +12,6 @@ export type ResearchItem = {
   authors?: string;
   venue?: string;
   links: Link[];
-  presentations?: Array<{ period: string; title: string; detail: string; href?: string }>;
 };
 
 export const research: ResearchItem[] = [
@@ -28,11 +27,6 @@ export const research: ResearchItem[] = [
     authors: 'Ryo Akiba, Yoshitaka Moriwaki, Ryuichiro Ishitani, and Naruki Yoshikawa',
     venue: 'Science and Technology of Advanced Materials: Methods, 6(1), 2611575 (2026)',
     links: [{ label: 'Paper', href: 'https://doi.org/10.1080/27660400.2025.2611575' }],
-    presentations: [
-      { period: '2026', title: 'AI4X-Accelerate 2026 in Singapore', detail: 'Oral presentation', href: 'https://openreview.net/forum?id=wXu96N9h54' },
-      { period: '2025', title: 'CBI学会2025年大会 in 東京', detail: '口頭発表・口頭発表賞', href: 'https://cbi-society.org/taikai/taikai25/index.html' },
-      { period: '2025', title: '生体分子設計研究会 in 東京科学大学 湯島キャンパス', detail: '研究発表', href: 'https://biomol-des-ws.github.io/activities' },
-    ],
   },
   {
     number: '02',
@@ -45,6 +39,80 @@ export const research: ResearchItem[] = [
     },
     meta: 'Research manuscript',
     links: [{ label: 'Tech Blog', href: 'https://tech.preferred.jp/ja/blog/bioexp_agent_error_detection/' }],
+  },
+];
+
+export type PresentationItem = {
+  date: string;
+  title: string | LocalizedText;
+  event: LocalizedText;
+  location: LocalizedText;
+  format: 'oral' | 'poster';
+  upcoming?: boolean;
+  award?: LocalizedText;
+  href: string;
+};
+
+export const presentations: PresentationItem[] = [
+  {
+    date: '2026-10-31',
+    title: {
+      en: 'Improving RNA template search and residue alignment accuracy using predicted structures',
+      ja: '予測構造を用いたRNAテンプレート検索と残基対応精度の改善',
+    },
+    event: { en: '10th Tokyo Bioinformatics Meeting', ja: 'Tokyo Bioinformatics Meeting 第10回研究会' },
+    location: { en: 'Keio University, Yagami Campus', ja: '慶應義塾大学 矢上キャンパス' },
+    format: 'oral',
+    upcoming: true,
+    href: 'https://sites.google.com/site/tokyobioinformaticsmeeting/',
+  },
+  {
+    date: '2026-10-31',
+    title: {
+      en: 'Template-assisted machine learning for RNA tertiary structure prediction without additional training',
+      ja: 'テンプレートを利用した追加学習を用いない機械学習によるRNA立体構造予測',
+    },
+    event: { en: '10th Tokyo Bioinformatics Meeting', ja: 'Tokyo Bioinformatics Meeting 第10回研究会' },
+    location: { en: 'Keio University, Yagami Campus', ja: '慶應義塾大学 矢上キャンパス' },
+    format: 'poster',
+    upcoming: true,
+    href: 'https://sites.google.com/site/tokyobioinformaticsmeeting/',
+  },
+  {
+    date: '2026-10-02',
+    title: {
+      en: 'Investigating the use of template information in deep learning-based RNA 3D structure prediction',
+      ja: '深層学習を用いたRNA三次元構造予測におけるテンプレート情報の利用方法の検討',
+    },
+    event: { en: '18th Annual Meeting of Young Researchers in Bioinformatics', ja: '生命情報科学若手の会 第18回年会' },
+    location: { en: 'Shonan Village Center, Kanagawa', ja: '湘南国際村センター（神奈川）' },
+    format: 'poster',
+    href: 'https://sites.google.com/view/bioinfowakate/activities/meetings/第18回-年会',
+  },
+  {
+    date: '2026-06',
+    title: 'Multi-objective optimization for designing structurally similar proteins with dissimilar sequences',
+    event: { en: 'AI4X-Accelerate 2026', ja: 'AI4X-Accelerate 2026' },
+    location: { en: 'Singapore', ja: 'シンガポール' },
+    format: 'oral',
+    href: 'https://openreview.net/forum?id=wXu96N9h54',
+  },
+  {
+    date: '2025-12-10',
+    title: 'Multi-objective optimization for designing structurally similar proteins with dissimilar sequences',
+    event: { en: '1st Biomolecular Design Workshop', ja: '第1回生体分子設計研究会' },
+    location: { en: 'Institute of Science Tokyo, Yushima Campus', ja: '東京科学大学 湯島キャンパス' },
+    format: 'oral',
+    href: 'https://biomol-des-ws.github.io/activities/1/',
+  },
+  {
+    date: '2025-10-30',
+    title: 'Multi-Objective Optimization for Designing Structurally Similar Proteins with Diverse Sequence',
+    event: { en: 'CBI Annual Meeting 2025', ja: 'CBI学会2025年大会' },
+    location: { en: 'Tokyo', ja: '東京' },
+    format: 'oral',
+    award: { en: 'Oral Presentation Award', ja: '口頭発表賞' },
+    href: 'https://cbi-society.org/taikai/taikai25/abstracts/Oral_ab/O06-06.html',
   },
 ];
 
