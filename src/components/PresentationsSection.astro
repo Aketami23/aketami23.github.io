@@ -1,6 +1,7 @@
 ---
 import { presentations } from '../data/profile';
 import LocalizedText from './LocalizedText.astro';
+import { formatPresentationDate } from '../utils/dates';
 
 const sortedPresentations = [...presentations].sort((a, b) => b.date.localeCompare(a.date));
 const years = [...new Set(sortedPresentations.map((item) => item.date.slice(0, 4)))];
@@ -20,6 +21,10 @@ const formats = {
           {sortedPresentations.filter((item) => item.date.startsWith(year)).map((item) => (
             <li class="presentation-entry">
               <div class="presentation-labels">
+                <span class="presentation-date">
+                  <span data-lang="en"><time datetime={item.date}>{formatPresentationDate(item, 'en')}</time></span>
+                  <span data-lang="ja"><time datetime={item.date}>{formatPresentationDate(item, 'ja')}</time></span>
+                </span>
                 <span class={`presentation-format presentation-format--${item.format}`}><LocalizedText text={formats[item.format]} /></span>
                 {item.upcoming && <span class="presentation-status"><LocalizedText text={{ en: 'Upcoming', ja: '発表予定' }} /></span>}
                 {item.award && <span class="presentation-award"><LocalizedText text={item.award} /></span>}

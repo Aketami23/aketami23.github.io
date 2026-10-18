@@ -480,6 +480,12 @@ html[data-language="ja"] [data-lang="ja"] {
   gap: 6px 10px;
 }
 
+.presentation-date {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+}
+
 .presentation-format,
 .presentation-status,
 .presentation-award {

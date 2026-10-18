@@ -1,5 +1,6 @@
 ---
 import { research, workExperience, presentations, activities } from '../data/profile';
+import { formatPresentationDate } from '../utils/dates';
 
 const talks = [...presentations].sort((a, b) => b.date.localeCompare(a.date));
 const years = [...new Set(talks.map((talk) => talk.date.slice(0, 4)))];
@@ -95,7 +96,7 @@ const updated = new Date().toLocaleDateString('en-US', { month: 'long', year: 'n
               <ol>
                 {talks.filter((talk) => talk.date.startsWith(year)).map((talk) => (
                   <li class="talk">
-                    <p class="talk-format">{talk.format === 'oral' ? 'Oral presentation' : 'Poster presentation'}{talk.upcoming && ' · Upcoming'}{talk.award && ` · ${talk.award.en}`}</p>
+                    <p class="talk-format"><time datetime={talk.date}>{formatPresentationDate(talk, 'en')}</time> · {talk.format === 'oral' ? 'Oral presentation' : 'Poster presentation'}{talk.upcoming && ' · Upcoming'}{talk.award && ` · ${talk.award.en}`}</p>
                     <h3><a href={talk.href}>{typeof talk.title === 'string' ? talk.title : talk.title.en}</a></h3>
                     <p class="muted">{talk.event.en} · {talk.location.en}</p>
                   </li>

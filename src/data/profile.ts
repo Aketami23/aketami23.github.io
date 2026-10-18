@@ -44,6 +44,7 @@ export const research: ResearchItem[] = [
 
 export type PresentationItem = {
   date: string;
+  endDate?: string;
   title: string | LocalizedText;
   event: LocalizedText;
   location: LocalizedText;
@@ -80,6 +81,7 @@ export const presentations: PresentationItem[] = [
   },
   {
     date: '2026-10-02',
+    endDate: '2026-10-04',
     title: {
       en: 'Investigating the use of template information in deep learning-based RNA 3D structure prediction',
       ja: '深層学習を用いたRNA三次元構造予測におけるテンプレート情報の利用方法の検討',
@@ -90,10 +92,10 @@ export const presentations: PresentationItem[] = [
     href: 'https://sites.google.com/view/bioinfowakate/activities/meetings/第18回-年会',
   },
   {
-    date: '2026-06',
+    date: '2026-06-19',
     title: 'Multi-objective optimization for designing structurally similar proteins with dissimilar sequences',
     event: { en: 'AI4X-Accelerate 2026', ja: 'AI4X-Accelerate 2026' },
-    location: { en: 'Singapore', ja: 'シンガポール' },
+    location: { en: 'Raffles City Convention Centre, Singapore', ja: 'Raffles City Convention Centre（シンガポール）' },
     format: 'oral',
     href: 'https://openreview.net/forum?id=wXu96N9h54',
   },
@@ -109,7 +111,7 @@ export const presentations: PresentationItem[] = [
     date: '2025-10-30',
     title: 'Multi-Objective Optimization for Designing Structurally Similar Proteins with Diverse Sequence',
     event: { en: 'CBI Annual Meeting 2025', ja: 'CBI学会2025年大会' },
-    location: { en: 'Tokyo', ja: '東京' },
+    location: { en: 'Tower Hall Funabori, Tokyo', ja: 'タワーホール船堀（東京）' },
     format: 'oral',
     award: { en: 'Oral Presentation Award', ja: '口頭発表賞' },
     href: 'https://cbi-society.org/taikai/taikai25/abstracts/Oral_ab/O06-06.html',
