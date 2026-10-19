@@ -16,17 +16,8 @@ html:lang(ja) {
   --font-serif: var(--font-sans);
 }
 
-html:lang(ja) body {
-  line-height: 1.8;
-}
-
 html:lang(ja) :is(h1, h2, h3, h4) {
-  line-height: 1.5;
   letter-spacing: 0.02em;
-}
-
-html:lang(ja) .research-content p[data-lang] {
-  line-height: 1.85;
 }
 
 * {
